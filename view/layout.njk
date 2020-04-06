@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/style.css">
+        <link rel="shortcut icon" href="https://cdn.icon-icons.com/icons2/2050/PNG/512/dumbbell_gym_icon_124413.png" type="image/x-icon">
+
+        {% block head %}
+            <title>Inicio - Gym Manager</title>
+        {% endblock head %}
+
+    </head>
+
+    <body>
+        <header>
+            <div class="links">
+                <a href="/instructors">Instrutores</a>
+                <a href="/members">Membros</a>
+            </div>
+        </header>
+
+
+        {% block content %}{% endblock content %}
+
+        <script src="/script.js"></script>
+    </body>
+
+</html>

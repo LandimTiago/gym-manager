@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+:root {
+    --color-rocket: #7159c1;
+    --color-green: #33e25f;
+    --color-redButton: rgb(223, 58, 58);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    background: var(--color-rocket);
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;
+    /* vai levar o conteudo ate o limite da largura e nao ultrapassa-la */
+}
+
+.links {
+    font-size: 22px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #777;
+    position: relative;
+}
+
+.links a+a {
+    /* pegue o "a" posterior ao primeiro "a" aplicando apenas no segundo neste caso */
+    margin-left: 32px;
+}
+
+.links a.active {
+    font-weight: bold;
+    color: var(--color-rocket);
+}
+
+.links a:hover {
+    /* adiciona efeitos quando passa o mouse em cima*/
+    color: var(--color-rocket);
+}
+
+.links a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-rocket);
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+}
+
+.links a:hover::after {
+    /* cria um conteiner para animação */
+    width: 100%;
+    transition: width 700ms ease-in-out 100ms;
+    /* MDN css animation para mais animações */
+}
+
+
+/*=== INSTRUTORES ===*/
+
+.card {
+    background-color: white;
+    width: 800px;
+    min-height: 400px;
+    margin: 45px auto;
+    display: grid;
+    /* SOMBRA */
+    /*   box-shadow: eixoX, eixoY, Borrão, espalhamento, cor;  */
+    box-shadow: 10px 10px 6px 2px rgba(0, 0, 0, 0.4);
+    /* ANIMAÇÃO DO CARD COM A FOTO */
+    animation-name: up;
+    animation-duration: 600ms;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* CONFIGURAÇÕES DA ANIMAÇÃO "UP" */
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* DETALHES */
+
+.details {
+    padding: 32px;
+}
+
+.details .item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 16px 0;
+}
+
+.details .item:last-child {
+    /* :last-child faz que com se aplique apenas ao ultimo elemento encontrado */
+    border: none;
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--color-rocket);
+    font-size: 14px;
+    line-height: 24px;
+    /*espaçamento entre as linhas*/
+    letter-spacing: 0.7px;
+    /* espeaçamento entre as letras */
+}
+
+.details .item div:nth-child(1) {
+    color: var(--color-rocket);
+    font-size: 14px;
+    line-height: 24px;
+    /*espaçamento entre as linhas*/
+    letter-spacing: 0.7px;
+    /* espeaçamento entre as letras */
+    font-weight: normal;
+}
+
+.details .item div:nth-child(2) {
+    color: #02033b;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.details .item span {
+    padding: 8px 16px;
+    background-color: var(--color-green);
+    border-radius: 16px;
+    margin-right: 4px;
+    margin-bottom: 5px;
+    display: inline-block;
+    /* para aceitar as propriedades de margin-top */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+
+/* FORMULARIO */
+
+input,
+select {
+    width: 100%;
+    outline: none;
+    color: #02033b;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+    /*ao definir o width no input ele quebra o alinhamento,
+                        com essa propriedade ele volta ao que estava antes*/
+    width: initial;
+    margin-right: 4px;
+}
+
+input::placeholder {
+    /* para aplicar so no placeholder */
+    font-size: 16px;
+    font-weight: normal;
+}
+
+button[type="submit"],
+a.button {
+    padding: 8px 32px;
+    background-color: var(--color-green);
+    color: #02033b;
+    border-radius: 16px;
+    margin-top: 16px;
+    width: 100%;
+    font-size: 16px;
+}
+
+a.button {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+}
+
+#formDelete button[type="submit"] {
+    margin-top: 8px;
+    background-color: var(--color-redButton);
+}
+
+
+/* === Tabela de Instrutores === */
+
+
+/* === INDEX INSTRUCTORS  === */
+
+.table-container {
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.table-container table {
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 16px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+th {
+    text-transform: uppercase;
+    color: #777;
+    font-size: 16px;
+    text-align: left;
+}
+
+th:last-child,
+td:last-child {
+    text-align: center;
+}
+
+tr:last-child td {
+    border-bottom: none;
+    margin-bottom: 5px;
+}
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span {
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+tbody tr td:last-child a,
+.table-container>a {
+    background-color: var(--color-green);
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.table-container>a {
+    margin-bottom: 32px;
+    display: inline-block;
+    margin-left: 2px;
+    font-size: 14px;
+}
+
+
+/* === TIPO SANGUINEO === */
