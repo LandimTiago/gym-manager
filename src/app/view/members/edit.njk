@@ -1,0 +1,38 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Editar - Gym Manager</title>
+{% endblock head %}
+
+{% block content %}
+    <div class="card">
+        <section class="avatar" style="background: url({{member.avatar_url}}) no-repeat top center / cover"></section>
+        <section class="details">
+            <form method="POST" action="/members?_method=PUT">
+                {# ?_method=PUT é um query string #}
+                <h3>Editar Membro</h3>
+                {% include "members/fields.njk" %}
+                <input type="hidden" name="id" value={{member.id}}>
+            </form>
+            
+            <form id="formDelete" action="/members?_method=DELETE" method="post">
+                <input type="hidden" name="id" value="{{member.id}}">
+                <button type="submit">Deletar</button>
+            </form>
+        </section>
+
+    </div>
+    <script>
+        const formDelete = document.querySelector("#formDelete")
+
+        formDelete.addEventListener("submit", function (e) {
+            const confirmation = confirm("Deseja deletar?")
+
+            if (!confirmation) {
+                e.preventDefault()
+                // confirmação para exclusão de cadastro
+            }
+        })
+    </script>
+
+{% endblock content %}
