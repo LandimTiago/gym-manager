@@ -185,7 +185,7 @@ a.button {
     padding: 8px 32px;
     background-color: var(--color-green);
     color: #02033b;
-    border-radius: 16px;
+    border-radius: 6px;
     margin-top: 16px;
     width: 100%;
     font-size: 16px;
@@ -277,4 +277,63 @@ tbody tr td:last-child a,
 }
 
 
-/* === TIPO SANGUINEO === */
+/* === Filtros === */
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    grid-gap: 8px;
+}
+.table-container .header form button {
+    margin: 0;
+}
+
+.table-container .header a {
+    width: 120px;
+    margin: 0;
+}
+
+.table-container .header form input {
+    border: 1px solid #999;
+    padding: 5px 8px;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* PAGINATION */
+
+.table-container {
+    display: grid;
+    grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-container .header {
+    margin: 0;
+    align-self: start;
+}
+
+.table-container .pagination {
+    margin: 0;
+    align-self: end;
+    justify-self: center;
+}
+
+.pagination a,
+.paginarion span {
+    color: var(--color-rocket);
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.pagination a:hover {
+    filter: brightness(0.3);
+    border-bottom: 1px solid var(--color-rocket);
+}
