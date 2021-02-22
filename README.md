@@ -1,5 +1,5 @@
 # gym-manager
-Gerenciador de Academias desenvolvido durante as aulas do Launchbase com intuito de cadastras e manipular dados de Alunos e Instrutores de uma academia relacionando cada usuario com seu profissional responsavel.
+Gerenciador de Academias desenvolvido durante as aulas do Launchbase com intuito de cadastrar e manipular dados de Alunos e Instrutores de uma academia relacionando cada usuario com seu profissional responsavel.
 
 
 ## Dependencies
